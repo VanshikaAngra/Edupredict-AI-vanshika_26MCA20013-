@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add Student</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Add Student</h1>
+
+</header>
+
+<nav>
+
+    <a href="/">Home</a>
+
+    <a href="/dashboard">
+        Dashboard
+    </a>
+
+</nav>
+
+<div class="form-container">
+
+<form method="POST">
+
+    <h2>Student Information</h2>
+
+    <label>Name</label>
+
+    <input
+        type="text"
+        name="name"
+        required
+    >
+
+    <label>Age</label>
+
+    <input
+        type="number"
+        name="age"
+        required
+    >
+
+    <label>Course</label>
+
+    <input
+        type="text"
+        name="course"
+        value="MCA"
+        required
+    >
+
+    <label>Semester</label>
+
+    <input
+        type="number"
+        name="semester"
+        min="1"
+        max="10"
+        required
+    >
+
+    <label>Marks</label>
+
+    <input
+        type="number"
+        name="marks"
+        min="0"
+        max="100"
+        step="0.01"
+        required
+    >
+
+    <label>Attendance (%)</label>
+
+    <input
+        type="number"
+        name="attendance"
+        min="0"
+        max="100"
+        step="0.01"
+        required
+    >
+
+    <label>
+        Study Hours Per Day
+    </label>
+
+    <input
+        type="number"
+        name="study_hours"
+        min="0"
+        max="12"
+        step="0.1"
+        required
+    >
+
+    <label>
+        Assignment Score
+    </label>
+
+    <input
+        type="number"
+        name="assignment_score"
+        min="0"
+        max="100"
+        required
+    >
+
+    <label>
+        Practical Score
+    </label>
+
+    <input
+        type="number"
+        name="practical_score"
+        min="0"
+        max="100"
+        required
+    >
+
+    <h2>
+        Skill Assessment
+    </h2>
+
+    <label>
+        Python Skill
+    </label>
+
+    <input
+        type="number"
+        name="python_skill"
+        min="0"
+        max="100"
+        required
+    >
+
+    <label>
+        SQL Skill
+    </label>
+
+    <input
+        type="number"
+        name="sql_skill"
+        min="0"
+        max="100"
+        required
+    >
+
+    <label>
+        Communication Skill
+    </label>
+
+    <input
+        type="number"
+        name="communication_skill"
+        min="0"
+        max="100"
+        required
+    >
+
+    <button type="submit">
+        Add Student
+    </button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

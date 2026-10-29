@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Analysis</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>EduPredict AI</h1>
+
+    <p>
+        Student Performance Analysis
+    </p>
+
+</header>
+
+<nav>
+
+    <a href="/">Home</a>
+
+    <a href="/dashboard">
+        Dashboard
+    </a>
+
+    <a href="/add">
+        Add Student
+    </a>
+
+</nav>
+
+<div class="container">
+
+    <div class="student-header">
+
+        <h2>
+            {{ student[1] }}
+        </h2>
+
+        <p>
+            {{ student[3] }}
+            -
+            Semester {{ student[4] }}
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                Performance Score
+            </h3>
+
+            <p>
+                {{ score }}%
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Performance Level
+            </h3>
+
+            <p>
+                {{ level }}
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Risk Level
+            </h3>
+
+            <p>
+                {{ risk }}
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Predicted Score
+            </h3>
+
+            <p>
+                {{ predicted_score }}%
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="charts">
+
+        <div>
+
+            <h2>
+                Performance Chart
+            </h2>
+
+            <img
+                src="{{ url_for(
+                    'static',
+                    filename='charts/student_' ~ student[0] ~ '.png'
+                ) }}"
+                class="chart"
+            >
+
+        </div>
+
+        <div>
+
+            <h2>
+                Skill Chart
+            </h2>
+
+            <img
+                src="{{ url_for(
+                    'static',
+                    filename='charts/skills_' ~ student[0] ~ '.png'
+                ) }}"
+                class="chart"
+            >
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>
+            Career Recommendations
+        </h2>
+
+        {% for career in careers %}
+
+        <div class="recommendation">
+
+            {{ career }}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="section">
+
+        <h2>
+            Skill Gap
+        </h2>
+
+        {% if gaps %}
+
+            {% for gap in gaps %}
+
+            <div class="gap">
+
+                Improve {{ gap }}
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>
+                No major skill gaps detected.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+    <div class="section">
+
+        <h2>
+            Student Details
+        </h2>
+
+        <p>
+            <strong>Marks:</strong>
+            {{ student[5] }}
+        </p>
+
+        <p>
+            <strong>Attendance:</strong>
+            {{ student[6] }}%
+        </p>
+
+        <p>
+            <strong>Study Hours:</strong>
+            {{ student[7] }}
+        </p>
+
+        <p>
+            <strong>Assignment:</strong>
+            {{ student[8] }}
+        </p>
+
+        <p>
+            <strong>Practical:</strong>
+            {{ student[9] }}
+        </p>
+
+        <p>
+            <strong>Python:</strong>
+            {{ student[10] }}
+        </p>
+
+        <p>
+            <strong>SQL:</strong>
+            {{ student[11] }}
+        </p>
+
+        <p>
+            <strong>Communication:</strong>
+            {{ student[12] }}
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
